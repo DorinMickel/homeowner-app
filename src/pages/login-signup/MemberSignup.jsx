@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { FromGroup } from '../../componants/FormGroup'
 import { addNewCommunity, addNewMember } from '../../redux/actions/storageActions'
 import { v4 as uuidv4 } from 'uuid';
+import { Link } from 'react-router-dom'
 
 const mapDispatchToProps = (dispatch) => ({
     addToMembersList: (newMember) => dispatch(addNewMember(newMember)),
@@ -49,6 +50,9 @@ function MemberSignup (props){
 
         props.addToMembersList(newMember)
         props.addToCommunitiesList(newCommunity)
+        
+        window.location.href = "/main-dashboard"
+
     }
 
     return (
@@ -113,7 +117,7 @@ function MemberSignup (props){
                 <Button onClick={createNewCommunity} variant="primary" type="button">
                     Sign me up
                 </Button>
-                {/* <Link className="signup-linkToLogin" to="/login">Login</Link> */}
+                <Link className="signup-linkToLogin" to="/login">Login</Link>
             </Col>
         </Form>
     </Container>

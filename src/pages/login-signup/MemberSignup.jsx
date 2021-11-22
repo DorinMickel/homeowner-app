@@ -2,21 +2,22 @@ import React, { useState } from 'react'
 import { Col, Container, Form , Button } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { FromGroup } from '../../componants/FormGroup'
-import { addNewCommunity, addNewMember } from '../../redux/actions/storageActions'
+import { addNewCommunity, addNewTenant } from '../../redux/actions/storageActions'
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom'
 
+
 const mapDispatchToProps = (dispatch) => ({
-    addToMembersList: (newMember) => dispatch(addNewMember(newMember)),
+    addToTenantsList: (newTenant) => dispatch(addNewTenant(newTenant)),
     addToCommunitiesList: (newCommunity) => dispatch(addNewCommunity(newCommunity))
 })
 const mapStateToProps = (state) => {
-    return state.members
+    return state.tenants
 }
 
 function MemberSignup (props){
-    let [newMember = {}, setMember] = useState({})
-    let [newCommunity = {}, setCommunity] = useState({})
+    let [newTenant, setTenant] = useState({})
+    let [newCommunity, setCommunity] = useState({})
 
     let [fullName, setFullName] = useState('')
     let [email, setEmail] = useState('')
@@ -27,8 +28,8 @@ function MemberSignup (props){
     let [city, setCity] = useState('')
 
     const createNewCommunity = () => {
-        setMember(
-            newMember = {
+        setTenant(
+            newTenant = {
                 userId: uuidv4(),
                 fullName,
                 email,
@@ -48,11 +49,10 @@ function MemberSignup (props){
             }
         )
 
-        props.addToMembersList(newMember)
+        props.addToTenantsList(newTenant)
         props.addToCommunitiesList(newCommunity)
         
-        window.location.href = "/main-dashboard"
-
+        window.location.href = "/main/dashboard"
     }
 
     return (

@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
-import members from './memberStorageReducer'
-import communities from './communityStorageReducer'
+import tenants from './tenantStorageReducer'
+import communities from './communityStorageReducer';
+import activeUser from './activeUserReducer'
 
 
 export default combineReducers({
-    members,
+    tenants,
     communities,
+    activeUser
 
 })

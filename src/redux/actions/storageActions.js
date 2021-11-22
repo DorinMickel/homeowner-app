@@ -1,15 +1,16 @@
 // action types
 
-export const ADD_NEW_MEMBER = 'ADD_NEW_MEMBER';
-export const ADD_NEW_COMMUNITY = 'ADD_NEW_COMMUNITY'
+export const ADD_NEW_TENANT = 'ADD_NEW_TENANT';
+export const ADD_NEW_COMMUNITY = 'ADD_NEW_COMMUNITY';
+export const SET_ACTIVE_USER = 'SET_ACTIVE_USER'
 
-// member storacge actions creator
+// tenants storage actions creator
 
-export function addNewMember (memberObj) {
+export function addNewTenant (tenantObj) {
     return (
         {
-            type: ADD_NEW_MEMBER,
-            payload: memberObj
+            type: ADD_NEW_TENANT,
+            payload: tenantObj
         }
     )
 }
@@ -17,8 +18,17 @@ export function addNewMember (memberObj) {
 export function addNewCommunity (communityObj) {
     return (
         {
-            type: 'ADD_NEW_COMMUNITY',
+            type: ADD_NEW_COMMUNITY,
             payload: communityObj
+        }
+    )
+}
+
+export function setActiveUser (userObj) {
+    return (
+        {
+            type: SET_ACTIVE_USER,
+            payload: userObj
         }
     )
 }

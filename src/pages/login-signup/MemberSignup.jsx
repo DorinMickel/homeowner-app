@@ -2,14 +2,15 @@ import React, { useState } from 'react'
 import { Col, Container, Form , Button } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { FromGroup } from '../../componants/FormGroup'
-import { addNewCommunity, addNewTenant } from '../../redux/actions/storageActions'
+import { addNewCommunity, addNewTenant, setActiveUser } from '../../redux/actions/storageActions'
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom'
 
 
 const mapDispatchToProps = (dispatch) => ({
     addToTenantsList: (newTenant) => dispatch(addNewTenant(newTenant)),
-    addToCommunitiesList: (newCommunity) => dispatch(addNewCommunity(newCommunity))
+    addToCommunitiesList: (newCommunity) => dispatch(addNewCommunity(newCommunity)),
+    asignActiveUser: (newTenant) => dispatch(setActiveUser(newTenant))
 })
 const mapStateToProps = (state) => {
     return state.tenants
@@ -51,6 +52,7 @@ function MemberSignup (props){
 
         props.addToTenantsList(newTenant)
         props.addToCommunitiesList(newCommunity)
+        props.asignActiveUser(newTenant)
         
         window.location.href = "/main/dashboard"
     }

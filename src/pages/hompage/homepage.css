@@ -1,0 +1,26 @@
+.hp-container {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.hompage-img {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    
+}
+
+.hompage-img img {
+    width: 50%;
+    border-radius: 30px;
+}
+
+.hp-card {
+    border: none;
+}
+
+.hp-navbar {
+    background-color: rgba(243,141,142,0.6);
+}

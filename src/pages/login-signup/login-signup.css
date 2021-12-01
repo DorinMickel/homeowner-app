@@ -1,0 +1,41 @@
+.signup-linkToLogin {
+    margin-left: 1rem;
+}
+
+.bg-img {
+    background-image: url('../../images/sunset-city.jpg');
+    opacity: 0.4;
+    height: 100%;
+    /* filter: blur(8px); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.in-container {
+    position: absolute;
+    top: 10%;
+    left: 15.5%;
+    /* -webkit-filter: blur(8px); */
+    /* linear-gradient(180deg, rgba(240, 128, 128,0.5) , transparent 30%),
+    linear-gradient(180deg, rgba(220, 108, 108,0.5) , transparent 30%); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.in-container > form {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.headline {
+    color: rgb(95, 94, 94);
+    font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    
+}
+
+.btn-container {
+    margin-top: 1rem;
+}

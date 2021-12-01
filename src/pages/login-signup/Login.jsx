@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Col, Container, Form, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import ButtonComp from '../../componants/ButtonComp';
 import Error from '../../componants/Error';
 import { FromGroup } from '../../componants/FormGroup'
 import { setActiveUser } from '../../redux/actions/storageActions';
@@ -32,9 +33,11 @@ const Login = (props) => {
         }) 
     }
     return (
-        <Container>
-                <h1>Welcome Back</h1>
-                <Form>
+        <React.Fragment>
+            <div className="bg-img"></div>
+            <Container className="in-container">
+                <h1 className="headline">Welcome Back</h1>
+                <Form >
                     <Col xs lg="5">
                         <Error
                             show={show}
@@ -56,16 +59,19 @@ const Login = (props) => {
                             type="password"
                             placeholder="Enter Password"
                         />
-
-                        <Button onClick={userLogin} variant="primary" type="button">
-                        Log me in
-                        </Button>
-                        <p>Don't have a community yet? 
-                        <Link className="login-linkToSignup" to="/member-signup">SignUp</Link>
-                         to create one now</p>
+                        <div className="btn-container">
+                            <ButtonComp 
+                                handleClick={userLogin}
+                                btnText="Log me in"
+                            />
+                            <p><span>Don't have a community yet? </span>
+                            <Link className="login-linkToSignup" to="/member-signup">SignUp</Link>
+                            <span> to create one now</span></p>
+                        </div>
                     </Col>
                 </Form>
             </Container>
+        </React.Fragment>
     )
 }
 

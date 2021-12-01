@@ -2,19 +2,7 @@
     max-width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
-}
-
-.hompage-img {
-    display: flex;
-    justify-content: center;
-    margin: 30px;
-    
-}
-
-.hompage-img img {
-    width: 50%;
-    border-radius: 30px;
+    margin-top: 5rem;
 }
 
 .hp-card {
@@ -22,5 +10,13 @@
 }
 
 .hp-navbar {
-    background-color: rgba(243,141,142,0.6);
+    background-color: rgba(240, 163, 164, 0.5);
+}
+
+.hp-navbar-nav {
+    flex-direction: row;
+}
+
+.hp-navbar-nav > Nav.Link {
+    padding-right: 0.5px !important;
 }

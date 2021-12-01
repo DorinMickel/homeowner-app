@@ -8,14 +8,12 @@ const HomepageNavbar = () => {
         <Navbar className="hp-navbar"  expand="lg">
             <Container className="mw-100">
             <Navbar.Brand href="/">HOA Systems</Navbar.Brand>
-                <Nav className="">
+                <Nav className="hp-navbar-nav">
                     <Nav.Link href="/login">Login</Nav.Link>
                     <Nav.Link href="/member-signup">Sign Up</Nav.Link>
                 </Nav>
             </Container>
         </Navbar>
-
-    
     </div>
     )
 }

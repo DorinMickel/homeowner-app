@@ -7,6 +7,7 @@ import ErrorPage from "./error/ErrorPage";
 import Homepage from "./hompage/Homepage";
 import Login from "./login-signup/Login";
 import MemberSignup from "./login-signup/MemberSignup";
+import TenantsPage from "./tenants/TenantsPage";
 
 
 
@@ -21,6 +22,7 @@ const PagesContainer = (props) => {
                 <Route path = "main" 
                     element={<MainNavbar/>}>
                     <Route path = "dashboard" element={<Dashboard />}/>
+                    <Route path = "tenants" element={<TenantsPage/>}/>
                     <Route path="*" element= {<ErrorPage/>}/>
                 </Route>
             </Routes>

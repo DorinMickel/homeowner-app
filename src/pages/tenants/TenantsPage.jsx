@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Container, ListGroup } from 'react-bootstrap'
 import TenantsModal from './TenantsModal';
 import ButtonComp from '../../componants/ButtonComp';
+import TenantDiv from './TenantDiv';
+import './tenants.css'
 
 // const mapDispatchToProps = (dispatch) => {
 
@@ -14,11 +16,24 @@ const mapStateToProps = (state) => {
 
 const TenantsPage = (props) => {
     let [isModalOpen, setIsModalOpen] = useState(false)
-    const handleShow = () => setIsModalOpen(true)
+    let [tenantDiv, setTenantDiv] = useState(false)
+    let [tenantIndex, setTenantIndex] = useState(-1)
+
+    const handleShow = () => setIsModalOpen(true);
+
     const handleClose = () => setIsModalOpen(false);
-    const tenantList = props.tenants.map( tenant => {
+
+    const handleTenantDiv = (tenant) => {
+        setTenantIndex(props.tenants.indexOf(tenant))
+        !tenantDiv ? setTenantDiv(true) : setTenantDiv(false)
+    }
+
+    const tenantList = props.tenants.map( (tenant,index) => {
         return (
-            <ListGroup.Item>{tenant.fullName}</ListGroup.Item>
+            <React.Fragment key={index}>
+                <ListGroup.Item onClick={() => handleTenantDiv(tenant)}>{tenant.fullName}</ListGroup.Item>
+                {tenantDiv && index === tenantIndex ? <TenantDiv tenantObj={tenant} setTenantDiv={setTenantDiv}/> : null}
+            </React.Fragment>
         )
     })
     return (
@@ -33,16 +48,14 @@ const TenantsPage = (props) => {
             <TenantsModal
                 isModalOpen={isModalOpen}
                 handleClose={handleClose}
+                
             />
           
             <ListGroup>
                 {tenantList}
             </ListGroup>
-
-            
         </Container>
     )
-
 }
 
 export default connect(mapStateToProps,null)(TenantsPage)

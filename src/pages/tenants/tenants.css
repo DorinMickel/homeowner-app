@@ -1,5 +1,26 @@
-.headline-modal {
-    background-image: 
-    linear-gradient(180deg, rgba(240, 128, 128,0.5) , transparent 50%),
-    linear-gradient(180deg, rgba(220, 108, 108,0.5) , transparent 50%);
+.formgroup > input, .form-select{
+    border-radius: 50px;
 }
+
+.tenants-div {
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    border-left: 1px solid rgba(0,0,0,.125);
+    border-right: 1px solid rgba(0,0,0,.125);
+}
+
+.tenants-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.tenants-btn {
+    align-self: flex-end;
+}
+
+.tenants-btn * {
+    margin: 3px;
+}
+

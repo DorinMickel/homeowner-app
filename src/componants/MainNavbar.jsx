@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
 }
 
 const MainNavbar = (props) => {
-    console.log(props.activeUser)
+
     return(
         <React.Fragment>
             <Navbar className="main-navbar"  expand="lg" variant="light">

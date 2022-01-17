@@ -3,7 +3,7 @@ import { Alert } from 'react-bootstrap';
 
 
 function Error(props) {
-  if (props.show) {
+  if (props.showError) {
     return (
       <Alert variant="danger"  dismissible>
         <p>

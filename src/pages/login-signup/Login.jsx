@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Col, Container, Form, Button } from 'react-bootstrap';
+import { Col, Container, Form } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ButtonComp from '../../componants/ButtonComp';
@@ -18,19 +18,26 @@ const Login = (props) => {
     let [email, setEmail] = useState('')
     let [pwd, setPdw] = useState('')
     let [error, setError] = useState('')
-    let [show, setShow] = useState(false)
+    let [showError, setShowError] = useState(false)
 
     const userLogin = () => {
-        props.tenants.find(tenant => {
-            if (tenant.email.toLowerCase() === email.toLowerCase() && tenant.pwd === pwd) {
-                props.asignActiveUser(tenant)
-                window.location.href = "/main/dashboard"
-            }
-            else {
-                setShow(true)
-                setError('Incorrect email or password')       
-            }
-        }) 
+        if (props.tenants.length > 0) {
+            props.tenants.find(tenant => {
+                if (tenant.email.toLowerCase() === email.toLowerCase() && tenant.pwd === pwd) {
+                        props.asignActiveUser(tenant)
+                        window.location.href = "/main/dashboard"
+                }
+                else {
+                    setShowError(true)
+                    setError('Incorrect email or password')       
+                }
+                return tenant
+            }) 
+        } 
+        else {
+            setShowError(true)
+            setError('User does not exist')  
+        }
     }
     return (
         <React.Fragment>
@@ -40,7 +47,7 @@ const Login = (props) => {
                 <Form >
                     <Col xs lg="5">
                         <Error
-                            show={show}
+                            showError={showError}
                             error={error}
                         />
                         

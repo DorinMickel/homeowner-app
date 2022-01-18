@@ -6,10 +6,6 @@ import ButtonComp from '../../componants/ButtonComp';
 import TenantDiv from './TenantDiv';
 import './tenants.css'
 
-// const mapDispatchToProps = (dispatch) => {
-
-// }
-
 const mapStateToProps = (state) => {
     return state.tenants
 }

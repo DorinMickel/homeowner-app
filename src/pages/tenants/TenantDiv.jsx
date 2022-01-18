@@ -22,10 +22,10 @@ const TenantDiv = (props) => {
         <React.Fragment>
             <div className="tenants-div">
                 <div className="tenants-details">
-                    <span>Full Name: {props.tenantObj.fullName}</span>
-                    <span>Email Address: {props.tenantObj.email}</span>
-                    <span>Apartment No.: {props.tenantObj.apt}</span>
-                    <span>User ID: {props.tenantObj.userId}</span>
+                    <span>Full Name: <b>{props.tenantObj.fullName}</b></span>
+                    <span>Email Address: <b>{props.tenantObj.email}</b></span>
+                    <span>Apartment No.: <b>{props.tenantObj.apt}</b></span>
+                    <span>Is committee member: <b>{props.tenantObj.isCommitteeMember === false ? "No" : "Yes"}</b></span>
                 </div>
                 <div className="tenants-btn">
                     {props.tenantObj.userId === props.activeUser.activeUser.userId ? null :

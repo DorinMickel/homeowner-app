@@ -4,6 +4,7 @@ import './homepage.css'
 import HomepageCard from './HomepageCard'
 import { Container } from 'react-bootstrap'
 
+
 function Homepage (){
 
     return (
@@ -21,7 +22,7 @@ function Homepage (){
                 cardText="Always be informed with decisions making regarding changes, improvements and committee money spendings"
                 />
                 <HomepageCard
-                imgSrc="https://png.pngtree.com/png-vector/20190626/ourlarge/pngtree-adoption-and-communitynetwork-and-social-icon-design-png-image_1513774.jpg"
+                imgSrc="https://cdn.dribbble.com/users/2129110/screenshots/4963111/community-icon.jpg"
                 CardTitle="COMMUNITY"
                 cardText="The people that srrounds you create a unique community, be part of it and make your life happier by getting to know them."
                 />
